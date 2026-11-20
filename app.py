@@ -15,8 +15,8 @@ from numpy.lib.stride_tricks import sliding_window_view
 warnings.filterwarnings("ignore")
 
 st.set_page_config(
-    page_title="FnO Pattern Scanner",
-    page_icon="📈",
+    page_title="Incredible Option",
+    page_icon="IMG_20261120_070411.png",
     layout="centered",
     initial_sidebar_state="collapsed",
 )
@@ -30,10 +30,28 @@ st.markdown("""
     }
     div[data-testid="stMetric"] {background: rgba(128,128,128,.08); padding: 12px; border-radius: 12px;}
     h1 {font-size: 1.8rem !important;}
+    [data-testid="stHeader"] {background: transparent;}
+    [data-testid="stToolbar"] {right: 0.5rem;}
+    footer {visibility: hidden;}
+    .brand-header {display:flex; align-items:center; gap:14px; padding:14px 16px;
+        background:linear-gradient(110deg,#07182b,#0b3450); border-radius:16px;
+        border-bottom:4px solid #00c98a; margin-bottom:18px;}
+    .brand-header img {width:68px;height:68px;border-radius:14px;}
+    .brand-name {font-size:clamp(22px,5vw,32px);font-weight:800;color:#fff;line-height:1.1;}
+    .brand-name span {color:#00d18d;}
+    .brand-tag {font-size:13px;color:#c7e5f5;margin-top:5px;}
+    .stApp {background-color:#f7f9fc;}
+    div[data-testid="stForm"] {background:#fff;}
+
 </style>
 """, unsafe_allow_html=True)
 
-st.title("📈 Historical FnO Pattern Scanner")
+from pathlib import Path as _Path
+import base64 as _base64
+_logo_bytes = _Path(__file__).with_name("IMG_20261120_070411.png").read_bytes()
+_logo_b64 = _base64.b64encode(_logo_bytes).decode("ascii")
+st.markdown(f"""<div class=\"brand-header\"><img src=\"data:image/png;base64,{_logo_b64}\"/><div><div class=\"brand-name\">INCREDIBLE <span>OPTION</span></div><div class=\"brand-tag\">Historical Stock Pattern Scanner</div></div></div>""", unsafe_allow_html=True)
+st.subheader("Historical Chart Pattern Scanner")
 st.caption("Search historical NSE F&O charts for patterns resembling the latest 60 completed candles.")
 
 # Last-known fallback only; the app first attempts to read the current NSE F&O file.
