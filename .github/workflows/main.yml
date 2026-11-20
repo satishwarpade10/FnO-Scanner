@@ -75,8 +75,8 @@ jobs:
               <application
                   android:label="Incredible Option"
                   android:icon="@drawable/ic_launcher"
-                  android:roundIcon="@mipmap/ic_launcher_round"
-                  android:theme="@android:style/Theme.Material.Light.NoActionBar"
+                  android:roundIcon="@drawable/ic_launcher"
+                  android:theme="@android:style/Theme.Mateandroid:theme=\"@android:style/Theme.Material.Light.NoActionBar\"rial.Light.NoActionBar"
                   android:usesCleartextTraffic="false">
                   <activity
                       android:name=".MainActivity"
