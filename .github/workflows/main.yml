@@ -116,10 +116,18 @@ jobs:
 
       - name: Verify exact supplied logo and launcher resources
         run: |
-          test -f app/src/main/res/drawable-nodpi/incredible_option_logo.png
+                - name: Verify supplied launcher logo
+        run: |
+          test -f app/src/main/res/drawable-nodpi/ic_launcher.png app/src/main/res/drawable-nodpi/incredible_option_logo.png
           test -f app/src/main/res/mipmap-xxxhdpi/ic_launcher.png
-          test -f app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png
-          test -f app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
+                - name: Verify supplied launcher logo
+        run: |
+                - name: Verify supplied launcher logo
+        run: |
+          test -f app/src/main/res/drawable-nodpi/ic_launcher.png app/src/main/res/drawable-nodpi/ic_launcher.png app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png
+                - name: Verify supplied launcher logo
+        run: |
+          test -f app/src/main/res/drawable-nodpi/ic_launcher.png app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml
           test -f app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml
 
       - name: Build APK
